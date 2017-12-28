@@ -22,7 +22,7 @@ before_install:
 
 before_script:
   - env | sort
-  - cd "$OS/$SUITE"
+  - cd "$OS_NAME/$OS_SUITE"
   - image="xutl/${OS_NAME}:${OS_SUITE}"
 
 script:
