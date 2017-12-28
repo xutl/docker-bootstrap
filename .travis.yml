@@ -36,14 +36,14 @@ after_success:
       docker push xutl/${OS_NAME}:${OS_VERSION};
       if [ "${OS_NAME}" == "ubuntu" ]; then
         if [ "${OS_SUITE}" == "xenial" ]; then
-          docker tag $image xutl/${OS}:latest;
-          docker push xutl/${OS}:latest;
+          docker tag $image xutl/${OS_NAME}:latest;
+          docker push xutl/${OS_NAME}:latest;
         fi
       fi
       if [ "${OS_NAME}" == "debian" ]; then
         if [ "${OS_SUITE}" == "stretch" ]; then
-          docker tag $image xutl/${OS}:latest;
-          docker push xutl/${OS}:latest;
+          docker tag $image xutl/${OS_NAME}:latest;
+          docker push xutl/${OS_NAME}:latest;
         fi
       fi
     fi
