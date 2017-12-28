@@ -6,6 +6,8 @@ services:
   - docker
 
 env:
+#   Centos
+  - OS_NAME=centos OS_VERSION=7 OS_SUITE=1711
 #   Debian
   - OS_NAME=debian OS_VERSION=8 OS_SUITE=jessie
   - OS_NAME=debian OS_VERSION=9 OS_SUITE=stretch
@@ -39,6 +41,10 @@ after_success:
         docker push xutl/${OS_NAME}:latest;
       fi;
       if [[ "${OS_NAME}" == "debian" && "${OS_SUITE}" == "stretch" ]]; then
+        docker tag $image xutl/${OS_NAME}:latest;
+        docker push xutl/${OS_NAME}:latest;
+      fi;
+      if [[ "${OS_NAME}" == "centos" && "${OS_SUITE}" == "1711" ]]; then
         docker tag $image xutl/${OS_NAME}:latest;
         docker push xutl/${OS_NAME}:latest;
       fi;
