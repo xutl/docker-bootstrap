@@ -11,7 +11,7 @@ env:
   - OS_NAME=alpine OS_VERSION=3.8 OS_SUITE=3.8
 #   Centos
   - OS_NAME=centos OS_VERSION=7.3 OS_SUITE=1611
-  - OS_NAME=centos OS_VERSION=7 OS_SUITE=18.04
+  - OS_NAME=centos OS_VERSION=7 OS_SUITE=1804
 #   Debian
   - OS_NAME=debian OS_VERSION=8 OS_SUITE=jessie
   - OS_NAME=debian OS_VERSION=9 OS_SUITE=stretch
