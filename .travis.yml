@@ -8,8 +8,10 @@ services:
 env:
 #   Alpine
   - OS_NAME=alpine OS_VERSION=3.7 OS_SUITE=3.7
+  - OS_NAME=alpine OS_VERSION=3.8 OS_SUITE=3.8
 #   Centos
-  - OS_NAME=centos OS_VERSION=7 OS_SUITE=1711
+  - OS_NAME=centos OS_VERSION=7.3 OS_SUITE=1611
+  - OS_NAME=centos OS_VERSION=7 OS_SUITE=18.04
 #   Debian
   - OS_NAME=debian OS_VERSION=8 OS_SUITE=jessie
   - OS_NAME=debian OS_VERSION=9 OS_SUITE=stretch
@@ -17,6 +19,7 @@ env:
   - OS_NAME=ubuntu OS_VERSION=14.04 OS_SUITE=trusty
   - OS_NAME=ubuntu OS_VERSION=16.04 OS_SUITE=xenial
   - OS_NAME=ubuntu OS_VERSION=18.04 OS_SUITE=bionic
+  - OS_NAME=ubuntu OS_VERSION=18.10 OS_SUITE=cosmic
 before_install:
   - export DOCKER_COMPOSE_VERSION=1.18.0
   - sudo rm /usr/local/bin/docker-compose
@@ -46,7 +49,7 @@ after_success:
         docker tag $image xutl/${OS_NAME}:latest;
         docker push xutl/${OS_NAME}:latest;
       fi;
-      if [[ "${OS_NAME}" == "centos" && "${OS_SUITE}" == "1711" ]]; then
+      if [[ "${OS_NAME}" == "centos" && "${OS_SUITE}" == "1804" ]]; then
         docker tag $image xutl/${OS_NAME}:latest;
         docker push xutl/${OS_NAME}:latest;
       fi;
